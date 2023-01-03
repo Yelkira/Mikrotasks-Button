@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {MouseEvent} from 'react';
 import './App.css';
+import {Button} from "./Components/Button";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const Button1Foo = (subscriber:string, age: number)=>{
+        console.log(subscriber, age)
+    }
+    const Button2Foo = (subscriber:string, age: number)=>{
+        console.log(subscriber, age)
+    }
+    const Button3Foo = ()=>{
+        console.log("yes i am")
+    }
+    return (
+        <div className="App">
+            <Button name="MyYoutubeChanel-1" callBack={()=>Button1Foo("I am Vasya", 21)}/>
+            <Button name="MyYoutubeChanel-2" callBack={()=>Button2Foo("i am Ivan",22)}/>
+            <Button name="Are you stupid button?" callBack={Button3Foo}/>
+        </div>
+    )
 }
 
 export default App;
